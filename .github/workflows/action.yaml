@@ -19,7 +19,7 @@ jobs:
           https://api.github.com/repos/Ash210611/silverton-dataops-brutesquad-exapmle/actions/artifacts?per_page=1)
 
           # Extract the run_id of the latest workflow run
-          run_id=$(echo "$response" | jq -r '.workflow_runs[0].id')
+          # run_id=$(echo "$response" | jq -r '.workflow_runs[0].id')
 
       # - name: Download github_branch
       #   uses: actions/download-artifact@v4
