@@ -36,4 +36,4 @@ jobs:
         run: |
           branch_value = $(cat selected-branch)
           echo "branch_value=${selected-branch}"
-          echo "branch=${selected-branch}" >> $GITHUB_OUTPUT
+          echo "branch=${branch_value}" >> $GITHUB_OUTPUT
