@@ -12,7 +12,7 @@ jobs:
       - name: Download artifact
       - id : get_run_id
         run: |
-          response = $(curl -L \
+          response=$(curl -L \
           -H "Accept: application/vnd.github+json" \
           -H "Authorization: Bearer ${{secrets.ARTIFACT_REPO}}" \
           -H "X-GitHub-Api-Version: 2022-11-28" \
