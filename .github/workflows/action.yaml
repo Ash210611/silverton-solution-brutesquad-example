@@ -24,7 +24,7 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@v4
         with:
-         name: github_branch
+         name: selected-branch
          github-token : ${{ secrets.ARTIFACT_REPO}}
          repository : Ash210611/silverton-dataops-brutesquad-exapmle
          run-id : ${{ steps.get_artifact_info.outputs.run_id }}
