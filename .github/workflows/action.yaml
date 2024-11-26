@@ -34,6 +34,6 @@ jobs:
       - name: Get the Value
         id : get_branch_value
         run: |
-          branch_value = $(cat selectedbranch)
+          branch_value = $(cat selectedbranch.txt)
           echo "branch_value=${branch_value}"
           echo "branch=${branch_value}" >> $GITHUB_OUTPUT
