@@ -13,6 +13,6 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: selected-branch
-          repo: sh210611/silverton-datops-brutesquad-example
+          repo: Ash210611/silverton-datops-brutesquad-example
           token: ${{ secrets.ARTIFACTS_PAT }}
 
