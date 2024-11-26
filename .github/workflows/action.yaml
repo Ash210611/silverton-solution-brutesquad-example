@@ -25,7 +25,7 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@v4
         with:
-         name: selected-branch
+         name: selectedbranch
          github-token : ${{ secrets.ARTIFACT_REPO}}
          repository : Ash210611/silverton-dataops-brutesquad-exapmle
          run-id : ${{ steps.get_artifact_info.outputs.run_id }}
@@ -34,6 +34,6 @@ jobs:
       - name: Get the Value
         id : get_branch_value
         run: |
-          branch_value = $(cat selected-branch)
+          branch_value = $(cat selectedbranch)
           echo "branch_value=${branch_value}"
           echo "branch=${branch_value}" >> $GITHUB_OUTPUT
