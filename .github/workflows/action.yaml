@@ -31,6 +31,8 @@ jobs:
          run-id : ${{ steps.get_artifact_info.outputs.run_id }}
          path: ./
 
+      - name: Unzip Artifact (if needed)
+        run: unzip selectedbranch -d ./
 
       - name: Get the Value
         id : get_branch_value
