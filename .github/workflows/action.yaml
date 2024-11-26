@@ -34,8 +34,8 @@ jobs:
       - name: List files in the directory
         run: ls -la
 
-      - name: Unzip Artifact (if needed)
-        run: unzip selectedbranch -d ./
+      # - name: Unzip Artifact (if needed)
+      #   run: unzip selectedbranch -d ./
 
       - name: Get the Value
         id : get_branch_value
