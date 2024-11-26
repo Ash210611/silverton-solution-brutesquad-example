@@ -21,11 +21,10 @@ jobs:
           # Extract the run_id of the latest workflow run
           run_id=$(echo "$response" | jq -r '.workflow_runs[0].id')
 
-      - name: Download github_branch
-        uses: actions/download-artifact@v4
-        with:
-          name: github_branch
-          github-token : ${{ secrets.ARTIFACT_REPO}}
-          repository : Ash210611/silverton-dataops-brutesquad-exapmle
-          run-id : ${{ steps.get_run_id.outputs.run_id }}
-
+      # - name: Download github_branch
+      #   uses: actions/download-artifact@v4
+      #   with:
+      #     name: github_branch
+      #     github-token : ${{ secrets.ARTIFACT_REPO}}
+      #     repository : Ash210611/silverton-dataops-brutesquad-exapmle
+      #     run-id : ${{ steps.get_run_id.outputs.run_id }}
