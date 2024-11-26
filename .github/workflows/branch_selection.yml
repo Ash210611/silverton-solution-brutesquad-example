@@ -4,20 +4,25 @@ on:
   push:
     branches:
       - '**'
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Select the branch to proceed with'
+        required: true
+        default: 'main'
+        type: choice
+        options:
+          - dev
+          - test
+          - ite
+          - prod
 
 jobs:
   select-branch:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Select Branch
-        id: select-branch
-        run: |
-          echo "Please select the branch to proceed with:"
-          # This is a placeholder for actual branch selection logic
-          echo "branch=main" >> $GITHUB_ENV
+      - name: Set selected branch
+        run: echo "branch=${{ github.event.inputs.branch }}" >> $GITHUB_ENV
 
   run-workflow:
     needs: select-branch
