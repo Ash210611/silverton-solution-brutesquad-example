@@ -29,13 +29,6 @@ jobs:
          github-token : ${{ secrets.ARTIFACT_REPO}}
          repository : Ash210611/silverton-dataops-brutesquad-exapmle
          run-id : ${{ steps.get_artifact_info.outputs.run_id }}
-         # path: ./
-
-      - name: List files in the directory
-        run: ls -la
-
-      # - name: Unzip Artifact (if needed)
-      #   run: unzip selectedbranch -d ./
 
       - name: Get the Value
         id : get_branch_value
