@@ -36,3 +36,21 @@ jobs:
           branch_value=$(cat selected-branch.txt)
           echo "branch_value=${branch_value}"
           echo "branch=${branch_value}" >> $GITHUB_OUTPUT
+
+      - name: Select the Ip
+        id: setting_ip
+        run: |
+          case "${{ steps.get_branch_value.outputs.branch_value }}" in
+            dev)
+              TDV_IP="${{ secrets.TDV_DEV_IP }}"
+              ;;
+            prod)
+              TDV_IP="${{ secrets.TDV_PROD_IP }}"
+              ;;
+            test)
+              TDV_IP="${{ secrets.TDV_TEST_IP }}"
+              ;;
+          esac
+          echo "tdv ip=${$TDV_IP}"
+          echo "TDV_IP=$TDV_IP" >> $GITHUB_ENV
+  
