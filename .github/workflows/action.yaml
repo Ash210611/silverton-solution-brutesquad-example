@@ -31,6 +31,9 @@ jobs:
          run-id : ${{ steps.get_artifact_info.outputs.run_id }}
          path: ./
 
+      - name: List files in the directory
+        run: ls -la
+
       - name: Unzip Artifact (if needed)
         run: unzip selectedbranch -d ./
 
