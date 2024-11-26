@@ -23,7 +23,7 @@ on:
 jobs:
   build:
     # runs-on: MA-Analytics-Runner
-    runs-on : zilverton-private-x64-ubuntu
+    runs-on : ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - id: OPS-action
