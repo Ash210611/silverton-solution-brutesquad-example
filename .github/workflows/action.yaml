@@ -29,6 +29,7 @@ jobs:
          github-token : ${{ secrets.ARTIFACT_REPO}}
          repository : Ash210611/silverton-dataops-brutesquad-exapmle
          run-id : ${{ steps.get_artifact_info.outputs.run_id }}
+         path: ./
 
 
       - name: Get the Value
