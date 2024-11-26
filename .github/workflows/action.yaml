@@ -40,7 +40,7 @@ jobs:
       - name: Select the Ip
         id: setting_ip
         run: |
-          case "${{ steps.get_branch_value.outputs.branch_value }}" in
+          case "${{ steps.get_branch_value.outputs.branch }}" in
             dev)
               TDV_IP="${{ secrets.TDV_DEV_IP }}"
               ;;
