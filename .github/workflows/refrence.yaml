@@ -36,6 +36,9 @@ jobs:
       - name: Copy Configuration File
         run: cp solution-repo/.github/workflows/${{ env.CONFIG_FILE }} ${{ github.workspace }}/config
 
+      - name: Verify Copied File
+        run: cat ${{ github.workspace }}/config/${{ env.CONFIG_FILE }}
+
       - name: List Files in Working Directory
         run: ls -R ${{ github.workspace }}
 
