@@ -37,7 +37,7 @@ jobs:
         run: ls -R ${{ github.workspace }}
 
       - name: List Files in Working Directory
-        run: ls -R ${{ github.workspace }}
+        run: ls -R ${{ github.workspace }}/config
 
       # - uses: actions/checkout@v4
       - id: OPS-action
