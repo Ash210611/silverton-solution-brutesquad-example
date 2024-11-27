@@ -27,11 +27,11 @@ jobs:
 
       # Set up environment-specific variables
       - name: Set Environment Variables
-        run: echo "CONFIG_FILE=config-${{ inputs.TDV_Environment }}.liquibase" >> $GITHUB_ENV
+        run: echo "CONFIG_FILE=${{ inputs.TDV_Environment }}.liquibase" >> $GITHUB_ENV
 
       # Copy the file from the solution repository to the workspace
       - name: Copy Configuration File
-        run: cp solution-repo/config/${{ env.CONFIG_FILE }} ${{ github.workspace }}/config
+        run: cp solution-repo/${{ env.CONFIG_FILE }} ${{ github.workspace }}/config
 
       - uses: actions/checkout@v4
       - id: OPS-action
