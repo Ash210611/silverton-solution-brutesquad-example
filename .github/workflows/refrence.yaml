@@ -31,7 +31,7 @@ jobs:
 
       # Copy the file from the solution repository to the workspace
       - name: Copy Configuration File
-        run: cp Ash210611/silverton-solution-brutesquad-example/.github/workflows/${{ env.CONFIG_FILE }} ${{ github.workspace }}/config
+        run: cp solution-repo/.github/workflows/${{ env.CONFIG_FILE }} ${{ github.workspace }}/config
 
       - uses: actions/checkout@v4
       - id: OPS-action
