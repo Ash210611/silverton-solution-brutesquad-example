@@ -36,7 +36,7 @@ jobs:
       - name: List Files in Working Directory
         run: ls -R ${{ github.workspace }}
 
-      - uses: actions/checkout@v4
+      # - uses: actions/checkout@v4
       - id: OPS-action
         uses: Ash210611/silverton-dataops-brutesquad-exapmle@main
         with: 
