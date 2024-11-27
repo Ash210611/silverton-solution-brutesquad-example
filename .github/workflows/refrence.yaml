@@ -7,18 +7,32 @@ on:
         type: choice
         description: "Select the environment of the TDV server"
         options:
-          - DEV
+          - dev
           - TEST
           - ITE
           - PROD
         default:
-          DEV
+          dev
 
 jobs:
   build:
     # runs-on: MA-Analytics-Runner
     runs-on : ubuntu-latest
     steps:
+      - name: Checkout Solution Repository
+        uses: actions/checkout@v4
+        with:
+          repository: Ash210611/silverton-solution-brutesquad-example
+          path: solution-repo
+
+      # Set up environment-specific variables
+      - name: Set Environment Variables
+        run: echo "CONFIG_FILE=config-${{ inputs.TDV_Environment }}.liquibase" >> $GITHUB_ENV
+
+      # Copy the file from the solution repository to the workspace
+      - name: Copy Configuration File
+        run: cp solution-repo/config/${{ env.CONFIG_FILE }} ${{ github.workspace }}/config
+
       - uses: actions/checkout@v4
       - id: OPS-action
         uses: Ash210611/silverton-dataops-brutesquad-exapmle@main
@@ -26,3 +40,4 @@ jobs:
           TDV_USER: ${{ secrets.TDV_SERV_USER_DEV }}
           TDV_PASSWORD: ${{ secrets.TDV_SERV_PASSWORD_DEV }}
           TDV_ENV: ${{ inputs.TDV_Environment }}
+          CONFIG_PATH: ${{ github.workspace }}/config/${{ env.CONFIG_FILE }}
