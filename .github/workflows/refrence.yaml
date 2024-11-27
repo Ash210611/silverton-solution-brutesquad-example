@@ -29,6 +29,9 @@ jobs:
       - name: Set Environment Variables
         run: echo "CONFIG_FILE=${{ inputs.TDV_Environment }}.liquibase" >> $GITHUB_ENV
 
+      - name: List Files in Source Directory
+        run: ls -R solution-repo/.github/workflows
+
       # Copy the file from the solution repository to the workspace
       - name: Copy Configuration File
         run: cp solution-repo/.github/workflows/${{ env.CONFIG_FILE }} ${{ github.workspace }}/config
