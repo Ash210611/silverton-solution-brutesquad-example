@@ -33,6 +33,9 @@ jobs:
       - name: Copy Configuration File
         run: cp solution-repo/.github/workflows/${{ env.CONFIG_FILE }} ${{ github.workspace }}/config
 
+      - name: List Files in Working Directory
+        run: ls -R ${{ github.workspace }}
+
       - uses: actions/checkout@v4
       - id: OPS-action
         uses: Ash210611/silverton-dataops-brutesquad-exapmle@main
