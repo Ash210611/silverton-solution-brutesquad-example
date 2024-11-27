@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - id: OPS-action
-        uses: Ash210611/silverton-dataops-brutesquad-exapmle/action2@main
+        uses: Ash210611/silverton-dataops-brutesquad-exapmle/action1.yaml@main
         with: 
           TDV_USER: ${{ secrets.TDV_SERV_USER_DEV }}
           TDV_PASSWORD: ${{ secrets.TDV_SERV_PASSWORD_DEV }}
