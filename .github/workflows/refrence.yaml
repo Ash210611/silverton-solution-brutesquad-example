@@ -33,15 +33,6 @@ jobs:
       - name: Copy Configuration File
         run: cp solution-repo/.github/workflows/${{ env.CONFIG_FILE }} ${{ github.workspace }}/config
 
-      - name: List Files in Working Directory
-        run: ls -R ${{ github.workspace }}
-
-      - name: List Files in Config Directory
-        run: ls -R ${{ github.workspace }}/config
-
-      - name: Verify Copied File
-        run: cat ${{ github.workspace }}/config/${{ env.CONFIG_FILE }}
-
       - name: Checkout DataOps Repository
         uses: actions/checkout@v4
         with:
